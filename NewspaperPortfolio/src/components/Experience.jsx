@@ -117,69 +117,16 @@ export default function Experience() {
           color: var(--ink-faint);
         }
 
-        .cert-box {
+        .exp-status-box {
           border: 1px solid var(--rule);
-          padding: 20px;
-          background: rgba(242, 234, 216, 0.42);
+          padding: 16px;
         }
 
-        .cert-label {
+        .exp-status-line {
           font-family: 'Space Mono', monospace;
-          font-size: 9px;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          color: var(--ink-light);
-          margin-bottom: 8px;
-        }
-
-        .cert-rule {
-          border: none;
-          border-top: 1px solid var(--rule);
-          margin-bottom: 12px;
-        }
-
-        .cert-item {
-          padding: 10px 0;
-          border-bottom: 1px solid var(--rule);
-        }
-
-        .cert-item:last-child {
-          border-bottom: none;
-        }
-
-        .cert-link {
-          display: block;
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .cert-link:hover {
-          background: transparent;
-          padding: 0;
-        }
-
-        .cert-title {
-          font-family: 'Playfair Display', serif;
-          font-size: 18px;
-          font-weight: 700;
+          font-size: 11px;
           color: var(--ink);
-          margin-bottom: 2px;
-        }
-
-        .cert-detail {
-          font-family: 'Space Mono', monospace;
-          font-size: 10px;
-          color: var(--ink-faint);
-        }
-
-        .cert-action {
-          display: inline-block;
-          font-family: 'Space Mono', monospace;
-          font-size: 9px;
-          letter-spacing: 1px;
-          color: var(--accent);
-          margin-top: 6px;
-          text-transform: uppercase;
+          line-height: 1.8;
         }
 
         @media (max-width: 768px) {
@@ -224,33 +171,11 @@ export default function Experience() {
               <div className="quote-text">From a dice game in vanilla JS to shipping AI tools with real users - in under a year.</div>
               <div className="quote-attr">- Vaibhav Vasistha, 2025</div>
             </div>
-            <div className="cert-box">
-              <div className="cert-label">CERTIFICATIONS</div>
-              <hr className="cert-rule" />
-              <div className="cert-item">
-                <a
-                  className="cert-link"
-                  href="https://drive.google.com/file/d/1vINYJwqn4YSqRTgnXoWJwP483cZnH6ug/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="cert-title">Full Stack Web Development</div>
-                  <div className="cert-detail">Udemy / 2024</div>
-                  <span className="cert-action">View certificate -&gt;</span>
-                </a>
-              </div>
-              <div className="cert-item">
-                <a
-                  className="cert-link"
-                  href="https://drive.google.com/file/d/1JTKuE3YNMN_KThkwl6r8BL9-u-ljoFNH/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="cert-title">Hacknova 3.0 Hackathon</div>
-                  <div className="cert-detail">Participant / SRM KTR</div>
-                  <span className="cert-action">View certificate -&gt;</span>
-                </a>
-              </div>
+            <div className="exp-status-box">
+              <div className="exp-status-line">STATUS: Available</div>
+              <div className="exp-status-line">START DATE: June 2025</div>
+              <div className="exp-status-line">TYPE: Internship / Full-time</div>
+              <div className="exp-status-line">LOCATION: Chennai / Remote</div>
             </div>
           </div>
         </div>

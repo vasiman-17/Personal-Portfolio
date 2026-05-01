@@ -13,7 +13,7 @@ export default function Contact() {
     {
       label: 'LINKEDIN',
       text: 'Vaibhav Vasistha',
-      href: 'https://linkedin.com/in/vaibhav-vasistha-8a6803358'
+      href: 'https://linkedin.com/in/vaibhav-vasistha-8a6803358/'
     },
     {
       label: 'RESUME',
@@ -28,7 +28,7 @@ export default function Contact() {
         .contact-container {
           max-width: var(--max-width);
           margin: 0 auto;
-          padding: 32px;
+          padding: 0 32px 32px;
           text-align: center;
         }
 
@@ -142,6 +142,7 @@ export default function Contact() {
 const styles = {
   contactSection: {
     width: '100%',
-    backgroundColor: 'var(--paper)'
+    backgroundColor: 'var(--paper)',
+    paddingTop: '48px'
   }
 }

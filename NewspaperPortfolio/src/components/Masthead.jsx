@@ -51,7 +51,6 @@ export default function Masthead() {
         <div className="masthead-top-row" style={styles.topRow}>
           <div style={styles.leftText}>EST. 2024 / SRM KTR / CHENNAI EDITION</div>
           <div style={styles.center}>
-            <div style={styles.monogram} aria-hidden="true">VV</div>
             <h1 className="masthead-title" style={styles.title} ref={titleRef}>
               {title.split('').map((char, index) => (
                 <span
@@ -74,7 +73,7 @@ export default function Masthead() {
         <hr className="rule-double" style={styles.ruleDouble} />
 
         <div style={styles.tagline} ref={taglineRef}>
-          Full-Stack Developer / AI Tools / Production-Ready Web Apps
+          All The Code That's Fit To Ship
         </div>
 
         <hr className="rule" style={styles.thinRule} />
@@ -83,7 +82,7 @@ export default function Masthead() {
           <a href="#work" style={styles.navLink}>Work</a>
           <a href="#about" style={styles.navLink}>About</a>
           <a href="#skills" style={styles.navLink}>Skills</a>
-          <a href="#experience" style={styles.navLink}>Proof</a>
+          <a href="#contact" style={styles.navLink}>Contact</a>
           <a
             href="https://docs.google.com/document/d/1N7St-SdyTNbibrxAuNgJfGgUPmDyGxcT/edit?usp=sharing&ouid=112235181738279072731&rtpof=true&sd=true"
             target="_blank"
@@ -92,7 +91,6 @@ export default function Masthead() {
           >
             Resume
           </a>
-          <a href="#contact" style={styles.navLink}>Contact</a>
         </nav>
 
         <hr className="rule-thick" style={styles.thickRule} />
@@ -129,22 +127,6 @@ const styles = {
   center: {
     flex: '1 1 auto',
     textAlign: 'center'
-  },
-  monogram: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '42px',
-    height: '42px',
-    border: '2px solid var(--ink)',
-    background: 'var(--highlight)',
-    color: 'var(--ink)',
-    fontFamily: "'Playfair Display', Georgia, serif",
-    fontSize: '18px',
-    fontWeight: '900',
-    lineHeight: 1,
-    marginBottom: '8px',
-    boxShadow: '3px 3px 0 var(--ink)'
   },
   title: {
     fontFamily: "'Playfair Display', Georgia, serif",

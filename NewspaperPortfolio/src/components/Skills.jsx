@@ -3,7 +3,7 @@ export default function Skills() {
     {
       title: 'Frontend',
       skills: ['React', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Tailwind CSS', 'Three.js', 'GSAP'],
-      footer: '3 years experience · Available now',
+      footer: 'Self-taught · Available now',
       delay: '0s'
     },
     {
@@ -34,7 +34,7 @@ export default function Skills() {
           font-size: 12px;
           line-height: 1.7;
           color: var(--ink);
-          margin-bottom: 24px;
+          margin-bottom: 16px;
         }
 
         .skills-grid {

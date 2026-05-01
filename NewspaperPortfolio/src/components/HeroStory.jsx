@@ -5,6 +5,7 @@ export default function HeroStory() {
         .hero-container {
           display: grid;
           grid-template-columns: 2fr 1.2fr 1fr;
+          align-items: start;
           gap: var(--col-gap);
           max-width: var(--max-width);
           margin: 0 auto;
@@ -279,7 +280,12 @@ export default function HeroStory() {
               <div className="hero-sidebar-body">
                 Full-stack collaboration platform with Google OAuth and JWT now live for real users.
               </div>
-              <a href="#projects" style={styles.sidebarLink}>
+              <a
+                href="https://syncro-brown.vercel.app/auth"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.sidebarLink}
+              >
                 Continue reading →
               </a>
             </div>
