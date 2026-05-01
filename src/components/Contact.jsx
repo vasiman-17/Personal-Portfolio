@@ -13,12 +13,12 @@ export default function Contact() {
     {
       label: 'LINKEDIN',
       text: 'Vaibhav Vasistha',
-      href: 'https://linkedin.com/in/vaibhav-vasistha-8a6803358/'
+      href: 'https://www.linkedin.com/in/vaibhav-vasistha-8a6803358/'
     },
     {
       label: 'RESUME',
       text: 'View Resume',
-      href: 'https://docs.google.com/document/d/1N7St-SdyTNbibrxAuNgJfGgUPmDyGxcT/edit?usp=sharing&ouid=112235181738279072731&rtpof=true&sd=true'
+      href: 'https://drive.google.com/file/d/1EwsnA155rAakkzwXwiOoKx9cQUfCO9ug/view'
     }
   ]
 

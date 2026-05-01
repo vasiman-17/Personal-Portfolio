@@ -10,15 +10,9 @@ export default function Footer() {
           text-align: center;
         }
 
-        .footer-divider {
-          border: none;
-          border-top: 1px solid rgba(242, 234, 216, 0.3);
-          margin-bottom: 24px;
-        }
-
         .footer-name {
-          font-family: 'UnifrakturMaguntia', serif;
-          font-size: clamp(30px, 5vw, 48px);
+          font-family: 'Abril Fatface', serif;
+          font-size: 28px;
           color: var(--paper);
           line-height: 1;
           margin-bottom: 12px;
@@ -32,18 +26,19 @@ export default function Footer() {
         }
 
         .footer-edition {
-          font-size: 12px;
+          font-size: 10px;
+          letter-spacing: 2px;
+          color: rgba(255,255,255,0.5);
           margin-bottom: 8px;
         }
 
         .footer-copyright {
-          font-size: 10px;
-          color: rgba(242, 234, 216, 0.72);
+          font-size: 9px;
+          color: rgba(255,255,255,0.3);
         }
       `}</style>
 
       <footer className="footer">
-        <hr className="footer-divider" />
         <div className="footer-name">Vasistha Times</div>
         <div className="footer-edition">Chennai Edition · Full-Stack Developer · 2025</div>
         <div className="footer-copyright">© Vaibhav Vasistha 2025</div>

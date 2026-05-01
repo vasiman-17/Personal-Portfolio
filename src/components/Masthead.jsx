@@ -129,13 +129,13 @@ const styles = {
     textAlign: 'center'
   },
   title: {
-    fontFamily: "'Playfair Display', Georgia, serif",
+    fontFamily: "'Abril Fatface', serif",
     fontSize: 'clamp(42px, 7vw, 88px)',
-    fontWeight: '900',
+    fontStyle: 'normal',
     textTransform: 'uppercase',
     color: 'var(--ink)',
     margin: '0',
-    letterSpacing: '1px',
+    letterSpacing: '3px',
     lineHeight: '0.92'
   },
   titleSrOnly: {

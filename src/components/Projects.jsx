@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Modal from './Modal'
 
 export default function Projects() {
-  const [isFlowboardModalOpen, setIsFlowboardModalOpen] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   const projects = [
     {
@@ -12,7 +12,7 @@ export default function Projects() {
       tagBg: 'var(--accent)',
       headline: 'PRism: AI Reviews Your Code So Your Team Doesn\'t Have To',
       image: '/assets/prism.png',
-      caption: 'PRism\'s cinematic scan animation analyzing a React pull request.',
+      caption: 'PRism\'s landing page — paste any GitHub PR URL to begin analysis.',
       body: 'Full-stack AI tool using Groq Llama 3 to analyze GitHub diffs and return structured code review with risk scoring.',
       liveUrl: 'https://prism-black-five.vercel.app/',
       tags: ['React', 'Three.js', 'GSAP', 'Python', 'Flask', 'Groq API', 'GitHub API'],
@@ -238,85 +238,18 @@ export default function Projects() {
         .project-coming-soon {
           font-family: 'Space Mono', monospace;
           font-size: 10px;
+          letter-spacing: 1px;
           color: var(--ink-faint);
           border: 1px solid var(--rule);
           padding: 6px 12px;
           display: inline-block;
-          background: rgba(153, 153, 153, 0.18);
+          background: transparent;
           cursor: pointer;
-          letter-spacing: 1px;
         }
 
         .project-coming-soon:hover {
-          background: rgba(153, 153, 153, 0.28);
+          background: transparent;
           color: var(--ink-light);
-        }
-
-        .modal-overlay {
-          position: fixed;
-          inset: 0;
-          z-index: 1000;
-          background: rgba(0, 0, 0, 0.6);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 24px;
-        }
-
-        .modal-box {
-          position: relative;
-          background: #f2ead8;
-          border: 2px solid #0d0d0d;
-          padding: 48px;
-          text-align: center;
-          max-width: 400px;
-          width: 100%;
-        }
-
-        .modal-box h3 {
-          font-family: 'Playfair Display', serif;
-          font-weight: 700;
-          font-size: 24px;
-          color: var(--ink);
-          margin: 0;
-        }
-
-        .modal-box p {
-          font-family: 'Space Mono', monospace;
-          font-size: 12px;
-          color: var(--ink);
-          margin: 16px 0;
-          line-height: 1.6;
-        }
-
-        .modal-github {
-          font-family: 'Space Mono', monospace;
-          font-size: 10px;
-          letter-spacing: 1px;
-          border: 1px solid var(--ink);
-          padding: 6px 12px;
-          display: inline-block;
-          text-decoration: none;
-          color: var(--ink);
-          background: transparent;
-        }
-
-        .modal-github:hover {
-          background: var(--ink);
-          color: var(--paper);
-          padding: 6px 12px;
-        }
-
-        .modal-close {
-          position: absolute;
-          top: 16px;
-          right: 16px;
-          background: transparent;
-          border: none;
-          font-size: 20px;
-          cursor: pointer;
-          color: var(--ink);
-          line-height: 1;
         }
 
         @media (max-width: 768px) {
@@ -382,7 +315,7 @@ export default function Projects() {
                       <button
                         className="project-title-button"
                         type="button"
-                        onClick={() => setIsFlowboardModalOpen(true)}
+                        onClick={() => setShowModal(true)}
                       >
                         {project.headline}
                       </button>
@@ -390,23 +323,29 @@ export default function Projects() {
                   </h3>
 
                   {project.liveUrl ? (
-                    <a
+                    <div
                       className="project-image-frame"
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault()
+                          window.open(project.liveUrl, '_blank', 'noopener,noreferrer')
+                        }
+                      }}
                     >
                       <img
                         src={project.image}
                         alt={project.headline}
                         className="project-image"
                       />
-                    </a>
+                    </div>
                   ) : (
                     <button
                       className="project-image-frame"
                       type="button"
-                      onClick={() => setIsFlowboardModalOpen(true)}
+                      onClick={() => setShowModal(true)}
                     >
                       <img
                         src={project.image}
@@ -444,7 +383,7 @@ export default function Projects() {
                       <button
                         className="project-coming-soon"
                         type="button"
-                        onClick={() => setIsFlowboardModalOpen(true)}
+                        onClick={() => setShowModal(true)}
                       >
                         Live: Coming Soon
                       </button>
@@ -456,10 +395,7 @@ export default function Projects() {
           </div>
         </div>
       </section>
-      <Modal
-        isOpen={isFlowboardModalOpen}
-        onClose={() => setIsFlowboardModalOpen(false)}
-      />
+      {showModal && <Modal onClose={() => setShowModal(false)} />}
     </>
   )
 }

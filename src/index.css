@@ -32,6 +32,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1;
 }
@@ -191,11 +195,11 @@ a:hover {
 
 .drop-cap::first-letter {
   font-family: var(--display-font);
-  font-size: 64px;
+  font-size: 44px;
   font-weight: 900;
-  line-height: 0.8;
+  line-height: 0.85;
   float: left;
-  margin: 6px 8px 0 0;
+  margin: 4px 6px 0 0;
   color: var(--ink);
 }
 
@@ -242,14 +246,11 @@ a:hover {
 
 .hero-body,
 .hero-subheadline,
-.hero-sidebar-body,
-.hero-teaser-body,
 .project-body,
 .project-caption,
 .projects-header,
 .exp-header,
 .exp-body,
-.quote-text,
 .contact-subtext {
   font-family: var(--body-font) !important;
   letter-spacing: 0 !important;
@@ -269,7 +270,6 @@ a:hover {
 }
 
 .project-caption,
-.hero-teaser-body,
 .hero-sidebar-body {
   font-size: 12px !important;
   line-height: 1.62 !important;

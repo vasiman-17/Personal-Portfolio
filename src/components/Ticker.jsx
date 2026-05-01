@@ -34,7 +34,7 @@ const styles = {
   tickerBar: {
     width: '100%',
     backgroundColor: 'var(--accent)',
-    padding: '6px 0',
+    padding: '5px 0',
     overflow: 'hidden',
     position: 'relative',
     display: 'flex',
@@ -42,11 +42,11 @@ const styles = {
   },
   breakingLabel: {
     fontFamily: "'Space Mono', monospace",
-    fontSize: '9px',
+    fontSize: '10px',
     fontWeight: '700',
     backgroundColor: 'var(--ink)',
     color: 'var(--paper)',
-    padding: '6px 12px',
+    padding: '5px 12px',
     position: 'absolute',
     left: '0',
     zIndex: '2',

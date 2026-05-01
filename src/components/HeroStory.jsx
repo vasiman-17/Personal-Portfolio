@@ -74,6 +74,7 @@ export default function HeroStory() {
           column-rule: 1px solid var(--rule);
           margin: 16px 0;
           color: var(--ink);
+          overflow: visible;
         }
 
         .hero-button {
@@ -92,28 +93,30 @@ export default function HeroStory() {
           transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .hero-button:hover {
+        .hero-button-primary {
+          background: var(--ink);
+          color: var(--paper);
+          border: 1px solid var(--ink);
+          padding: 10px 20px;
+          font-size: 11px;
+          border-radius: 0;
+        }
+
+        .hero-button-secondary {
+          background: transparent;
+          color: var(--ink);
+          border: 1px solid var(--ink);
+        }
+
+        .hero-button-secondary:hover {
           background: var(--ink);
           color: var(--paper);
         }
 
-        .hero-sidebar-article {
-          border-top: 2px solid var(--ink);
-          padding-top: 12px;
-          margin-top: 12px;
-        }
-
-        .hero-sidebar-headline {
-          font-family: 'Playfair Display', serif;
-          font-size: 16px;
-          font-weight: 700;
-          color: var(--ink);
-          margin-bottom: 8px;
-        }
-
-        .hero-sidebar-body {
-          color: var(--ink-secondary);
-          margin-bottom: 8px;
+        .hero-button-primary:hover {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: var(--paper);
         }
 
         .hero-teaser {
@@ -130,29 +133,43 @@ export default function HeroStory() {
           font-size: 14px;
           font-weight: 700;
           color: var(--ink);
-          margin: 6px 0;
+          line-height: 1.3;
+          margin-bottom: 4px;
         }
 
         .hero-teaser-body {
+          font-family: 'Space Mono', monospace;
+          font-size: 10px;
           color: var(--ink-faint);
+          line-height: 1.5;
         }
 
-        .hero-status-box {
+        .hero-facts-box {
           border: 1px solid var(--rule);
-          padding: 12px;
+          padding: 16px;
           margin-top: 16px;
         }
 
-        .hero-status-line {
+        .hero-facts-title {
           font-family: 'Space Mono', monospace;
-          font-size: 12px;
-          color: var(--ink);
-          line-height: 1.8;
+          font-size: 9px;
+          letter-spacing: 3px;
+          color: var(--ink-faint);
+          text-transform: uppercase;
+          margin-bottom: 12px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--rule);
+        }
+
+        .hero-facts-body {
+          font-family: 'Space Mono', monospace;
+          font-size: 11px;
+          color: var(--ink-secondary);
+          line-height: 2;
         }
 
         .hero-photo-wrap {
           position: relative;
-          overflow: hidden;
           border: 1px solid var(--rule);
           margin-bottom: 8px;
           aspect-ratio: 4 / 5;
@@ -171,26 +188,24 @@ export default function HeroStory() {
           z-index: 1;
         }
 
-        .hero-photo-wrap::after {
-          content: 'Read More →';
-          position: absolute;
-          inset: 0;
-          background: rgba(13, 13, 13, 0.7);
-          color: var(--paper);
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .hero-teaser-page {
           font-family: 'Space Mono', monospace;
-          font-size: 11px;
+          font-size: 9px;
+          color: var(--accent);
+          margin-bottom: 4px;
           letter-spacing: 2px;
-          text-transform: uppercase;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          z-index: 2;
         }
 
-        .hero-photo-wrap:hover::after {
-          opacity: 1;
+        .hero-teaser-link {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .hero-teaser-link:hover {
+          background: transparent;
+          padding: 0;
+          text-decoration: underline;
+          text-underline-offset: 3px;
         }
 
         @media (max-width: 768px) {
@@ -241,7 +256,7 @@ export default function HeroStory() {
             </div>
 
             <div className="hero-body">
-              In what observers are calling an impressive feat for a second-year student, Vaibhav Vasistha has shipped PRism — a fully deployed AI tool that reads GitHub pull requests and returns senior-engineer-level code reviews in seconds. The tool uses Groq's Llama 3 model and Three.js for a cinematic scan animation. Built solo. Deployed on Vercel and Render. Free to use.
+              PRism emerged from a simple question: why do developers wait days for code review when the feedback could arrive in seconds? Built entirely solo by a second-year student, the tool connects directly to GitHub, reads every line of a pull request, and returns a structured review - risks identified, improvements specified, risk score calculated. Deployed on Vercel and Render. Free to use. Live now.
             </div>
 
             <div className="pull-quote">
@@ -249,10 +264,10 @@ export default function HeroStory() {
             </div>
 
             <div>
-              <a href="https://prism-black-five.vercel.app/" target="_blank" rel="noopener noreferrer" className="hero-button">
+              <a href="https://prism-black-five.vercel.app/" target="_blank" rel="noopener noreferrer" className="hero-button hero-button-primary">
                 Read Full Story →
               </a>
-              <a href="https://github.com/vasiman-17/Prism" target="_blank" rel="noopener noreferrer" className="hero-button">
+              <a href="https://github.com/vasiman-17/Prism" target="_blank" rel="noopener noreferrer" className="hero-button hero-button-secondary">
                 View Source →
               </a>
             </div>
@@ -273,21 +288,15 @@ export default function HeroStory() {
               Vaibhav Vasistha, 2nd year B.Tech AI, SRM Kattankulathur - building production tools from Chennai.
             </div>
 
-            <div className="hero-sidebar-article">
-              <div className="hero-sidebar-headline">
-                Syncro Platform Reaches Production
+            <div className="hero-facts-box">
+              <div className="hero-facts-title">Quick Facts</div>
+              <div className="hero-facts-body">
+                <div>📍 Chennai, India</div>
+                <div>🎓 B.Tech AI · SRM KTR</div>
+                <div>📊 CGPA: 8.67</div>
+                <div>⚡ 3 Projects Shipped</div>
+                <div>🟢 Open to Internships</div>
               </div>
-              <div className="hero-sidebar-body">
-                Full-stack collaboration platform with Google OAuth and JWT now live for real users.
-              </div>
-              <a
-                href="https://syncro-brown.vercel.app/auth"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={styles.sidebarLink}
-              >
-                Continue reading →
-              </a>
             </div>
           </div>
 
@@ -297,9 +306,9 @@ export default function HeroStory() {
 
             {/* TEASER 1 */}
             <div className="hero-teaser">
-              <div className="article-number">P. 2</div>
+              <div className="hero-teaser-page">P.2</div>
               <div className="hero-teaser-headline">
-                Flowboard: Build API Workflows Visually
+                <a className="hero-teaser-link" href="#work">Flowboard: Build API Workflows Visually</a>
               </div>
               <div className="hero-teaser-body">
                 DAG-based execution engine ships.
@@ -308,9 +317,9 @@ export default function HeroStory() {
 
             {/* TEASER 2 */}
             <div className="hero-teaser">
-              <div className="article-number">P. 3</div>
+              <div className="hero-teaser-page">P.3</div>
               <div className="hero-teaser-headline">
-                Skills Inventory: 2025 Edition
+                <a className="hero-teaser-link" href="#skills">Skills Inventory: 2025 Edition</a>
               </div>
               <div className="hero-teaser-body">
                 React, Node, Python, Three.js and more.
@@ -319,24 +328,13 @@ export default function HeroStory() {
 
             {/* TEASER 3 */}
             <div className="hero-teaser">
-              <div className="article-number">P. 4</div>
+              <div className="hero-teaser-page">P.4</div>
               <div className="hero-teaser-headline">
-                Internship Applications Open
+                <a className="hero-teaser-link" href="#contact">Internship Applications Open</a>
               </div>
               <div className="hero-teaser-body">
                 Developer available for summer 2025.
               </div>
-            </div>
-
-            {/* STATUS BOX */}
-            <div className="hero-status-box">
-              <div className="col-label" style={{ marginBottom: '8px' }}>
-                CURRENT STATUS
-              </div>
-              <div className="hero-status-line">Available for Internship</div>
-              <div className="hero-status-line">Open to: Startups, Product</div>
-              <div className="hero-status-line">Location: Chennai / Remote</div>
-              <div className="hero-status-line">Response time: &lt; 24 hours</div>
             </div>
           </div>
         </div>
@@ -366,13 +364,6 @@ const styles = {
     padding: '8px 0',
     borderBottom: '1px solid var(--rule)',
     lineHeight: '1.6'
-  },
-  sidebarLink: {
-    fontFamily: "'Space Mono', monospace",
-    fontSize: '10px',
-    color: 'var(--ink)',
-    textDecoration: 'underline',
-    textUnderlineOffset: '3px'
   },
   alsoInsideLabel: {
     fontFamily: "'Space Mono', monospace",

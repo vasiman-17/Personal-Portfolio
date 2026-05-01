@@ -95,38 +95,55 @@ export default function Experience() {
           color: var(--ink);
         }
 
-        .quote-box {
+        .exp-right-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .exp-about-box {
           border: 2px solid var(--ink);
           padding: 24px;
-          margin-bottom: 24px;
-          background: rgba(255, 215, 0, 0.08);
         }
 
-        .quote-text {
+        .exp-about-body {
           font-family: 'DM Serif Display', serif;
-          font-size: 22px;
+          font-size: 15px;
           font-style: italic;
-          line-height: 1.35;
-          color: var(--ink);
-          margin-bottom: 12px;
+          line-height: 1.7;
+          color: var(--ink-secondary);
         }
 
-        .quote-attr {
-          font-family: 'Space Mono', monospace;
-          font-size: 10px;
-          color: var(--ink-faint);
-        }
-
-        .exp-status-box {
+        .exp-stats-box {
           border: 1px solid var(--rule);
-          padding: 16px;
+          padding: 20px;
         }
 
-        .exp-status-line {
-          font-family: 'Space Mono', monospace;
-          font-size: 11px;
+        .exp-stats-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        .exp-stat-item {
+          border-left: 2px solid var(--accent);
+          padding-left: 12px;
+        }
+
+        .exp-stat-value {
+          font-family: 'Playfair Display', serif;
+          font-size: 28px;
+          font-weight: 700;
           color: var(--ink);
-          line-height: 1.8;
+          line-height: 1.1;
+        }
+
+        .exp-stat-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 9px;
+          color: var(--ink-faint);
+          letter-spacing: 1px;
+          text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
@@ -167,15 +184,38 @@ export default function Experience() {
             </div>
           </div>
           <div className="exp-col-right reveal">
-            <div className="quote-box">
-              <div className="quote-text">From a dice game in vanilla JS to shipping AI tools with real users - in under a year.</div>
-              <div className="quote-attr">- Vaibhav Vasistha, 2025</div>
-            </div>
-            <div className="exp-status-box">
-              <div className="exp-status-line">STATUS: Available</div>
-              <div className="exp-status-line">START DATE: June 2025</div>
-              <div className="exp-status-line">TYPE: Internship / Full-time</div>
-              <div className="exp-status-line">LOCATION: Chennai / Remote</div>
+            <div className="exp-right-stack">
+              <div className="exp-about-box">
+                <div className="col-label" style={{ borderBottom: '1px solid var(--rule)', paddingBottom: '8px', marginBottom: '16px' }}>
+                  About the Developer
+                </div>
+                <p className="exp-about-body">
+                  Second year B.Tech Artificial Intelligence student at SRM KTR. Builds full-stack products with React, Node.js, and Python. Currently exploring ML - training models, not just listing the skill.
+                </p>
+              </div>
+              <div className="exp-stats-box">
+                <div className="col-label" style={{ borderBottom: '1px solid var(--rule)', paddingBottom: '8px', marginBottom: '16px' }}>
+                  By The Numbers
+                </div>
+                <div className="exp-stats-grid">
+                  <div className="exp-stat-item">
+                    <div className="exp-stat-value">8.67</div>
+                    <div className="exp-stat-label">CGPA</div>
+                  </div>
+                  <div className="exp-stat-item">
+                    <div className="exp-stat-value">3</div>
+                    <div className="exp-stat-label">Projects Shipped</div>
+                  </div>
+                  <div className="exp-stat-item">
+                    <div className="exp-stat-value">2</div>
+                    <div className="exp-stat-label">Live Products</div>
+                  </div>
+                  <div className="exp-stat-item">
+                    <div className="exp-stat-value">4th</div>
+                    <div className="exp-stat-label">Semester</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
