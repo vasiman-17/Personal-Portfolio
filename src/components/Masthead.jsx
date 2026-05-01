@@ -5,7 +5,7 @@ export default function Masthead() {
   const titleRef = useRef(null)
   const taglineRef = useRef(null)
   const navRef = useRef(null)
-  const title = 'Vaibhav Vasistha'
+  const title = 'Vasistha Times'
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -129,13 +129,13 @@ const styles = {
     textAlign: 'center'
   },
   title: {
-    fontFamily: "'Abril Fatface', serif",
-    fontSize: 'clamp(42px, 7vw, 88px)',
+    fontFamily: "'UnifrakturMaguntia', 'Times New Roman', serif",
+    fontSize: 'clamp(46px, 7vw, 90px)',
     fontStyle: 'normal',
-    textTransform: 'uppercase',
+    textTransform: 'none',
     color: 'var(--ink)',
     margin: '0',
-    letterSpacing: '3px',
+    letterSpacing: '1px',
     lineHeight: '0.92'
   },
   titleSrOnly: {

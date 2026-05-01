@@ -144,13 +144,13 @@ export default function HeroStory() {
           line-height: 1.5;
         }
 
-        .hero-facts-box {
+        .hero-profile-box {
           border: 1px solid var(--rule);
           padding: 16px;
           margin-top: 16px;
         }
 
-        .hero-facts-title {
+        .hero-profile-title {
           font-family: 'Space Mono', monospace;
           font-size: 9px;
           letter-spacing: 3px;
@@ -161,11 +161,33 @@ export default function HeroStory() {
           border-bottom: 1px solid var(--rule);
         }
 
-        .hero-facts-body {
+        .hero-profile-body {
           font-family: 'Space Mono', monospace;
-          font-size: 11px;
+          font-size: 12px;
           color: var(--ink-secondary);
-          line-height: 2;
+          line-height: 1.9;
+        }
+
+        .hero-col3-feature {
+          margin-top: 16px;
+          border: 1px solid var(--rule);
+          padding: 10px;
+        }
+
+        .hero-col3-feature-image {
+          width: 100%;
+          height: 140px;
+          object-fit: cover;
+          border: 1px solid var(--rule);
+          margin-bottom: 10px;
+          filter: grayscale(72%) sepia(10%) contrast(1.05);
+        }
+
+        .hero-col3-feature-caption {
+          font-family: 'Space Mono', monospace;
+          font-size: 10px;
+          color: var(--ink-faint);
+          line-height: 1.6;
         }
 
         .hero-photo-wrap {
@@ -288,14 +310,12 @@ export default function HeroStory() {
               Vaibhav Vasistha, 2nd year B.Tech AI, SRM Kattankulathur - building production tools from Chennai.
             </div>
 
-            <div className="hero-facts-box">
-              <div className="hero-facts-title">Quick Facts</div>
-              <div className="hero-facts-body">
-                <div>📍 Chennai, India</div>
-                <div>🎓 B.Tech AI · SRM KTR</div>
-                <div>📊 CGPA: 8.67</div>
-                <div>⚡ 3 Projects Shipped</div>
-                <div>🟢 Open to Internships</div>
+            <div className="hero-profile-box">
+              <div className="hero-profile-title">From the Chennai Desk</div>
+              <div className="hero-profile-body">
+                <div>Second-year B.Tech AI student at SRM KTR.</div>
+                <div>Builds and ships full-stack products, not mockups.</div>
+                <div>Currently looking for internship opportunities.</div>
               </div>
             </div>
           </div>
@@ -334,6 +354,17 @@ export default function HeroStory() {
               </div>
               <div className="hero-teaser-body">
                 Developer available for summer 2025.
+              </div>
+            </div>
+
+            <div className="hero-col3-feature">
+              <img
+                src="/assets/prism.png"
+                alt="PRism production preview"
+                className="hero-col3-feature-image"
+              />
+              <div className="hero-col3-feature-caption">
+                This week&apos;s build: PRism in production, reviewing live pull requests with structured risk scoring.
               </div>
             </div>
           </div>
