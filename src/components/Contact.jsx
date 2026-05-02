@@ -95,13 +95,14 @@ export default function Contact() {
           flex-direction: column;
           align-items: center;
           gap: 8px;
-          transition: background 0.2s ease, color 0.2s ease;
+          transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
           cursor: pointer;
         }
 
         .contact-card:hover {
           background: var(--ink);
           color: var(--paper);
+          box-shadow: 3px 3px 0px var(--accent);
         }
 
         .contact-card-label {
@@ -121,10 +122,10 @@ export default function Contact() {
 
       <section id="contact" style={styles.contactSection}>
         <div className="contact-container reveal">
-          <div className="contact-label">CORRESPONDENCE WELCOME</div>
+          <div className="contact-label">Correspondence Welcome</div>
           <hr className="contact-label-rule" />
-          <h2 className="contact-headline">Get In Touch</h2>
-          <div className="contact-subtext">Open to internships, freelance work, and interesting collaborations. Email is the fastest way to reach me.</div>
+          <h2 className="contact-headline">Let's Build Something</h2>
+          <div className="contact-subtext">Open to full-time roles, freelance projects, and meaningful collaborations. Email is the fastest way to reach me.</div>
           <div className="contact-cards">
             {contactCards.map((card, index) => (
               <a key={index} href={card.href} target={card.href.startsWith('http') ? '_blank' : '_self'} rel={card.href.startsWith('http') ? 'noopener noreferrer' : ''} className="contact-card">

@@ -1,5 +1,5 @@
 export default function Ticker() {
-  const tickerContent = "DEVELOPER AVAILABLE FOR SUMMER 2025 INTERNSHIP · PRISM AI TOOL NOW LIVE · SYNCRO PLATFORM DEPLOYED · FLOWBOARD IN DEVELOPMENT · CGPA: 8.67 · SRM KTR · FULL STACK · REACT · NODE.JS · PYTHON · GROQ LLAMA 3 · "
+  const tickerContent = "PRISM AI CODE REVIEWER — LIVE IN PRODUCTION · SYNCRO TEAM PLATFORM — DEPLOYED WITH OAUTH · 3 PRODUCTS SHIPPED SOLO · CGPA 8.67 · B.TECH AI · SRM KTR · REACT · NODE.JS · PYTHON · THREE.JS · MONGODB · GROQ LLAMA 3 · OPEN TO OPPORTUNITIES · "
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function Ticker() {
           }
         }
         .ticker-content {
-          animation: ticker 30s linear infinite;
+          animation: ticker 35s linear infinite;
           white-space: nowrap;
         }
         .ticker-content:hover {

@@ -164,7 +164,6 @@ img {
 a:hover {
   background: var(--highlight);
   text-decoration: none;
-  padding: 0 2px;
 }
 
 /* ============================= */

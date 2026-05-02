@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import Modal from './Modal'
 
 export default function Projects() {
@@ -76,8 +76,14 @@ export default function Projects() {
 
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: 1fr auto 1fr auto 1fr;
           gap: var(--col-gap);
+        }
+
+        .project-divider {
+          width: 1px;
+          background: var(--rule);
+          align-self: stretch;
         }
 
         .project-card {
@@ -88,16 +94,6 @@ export default function Projects() {
         .project-card.visible {
           opacity: 1;
           transform: none;
-        }
-
-        .project-col-1 {
-          border-right: 1px solid var(--rule);
-          padding-right: var(--col-gap);
-        }
-
-        .project-col-2 {
-          border-right: 1px solid var(--rule);
-          padding-right: var(--col-gap);
         }
 
         .project-headline {
@@ -258,10 +254,8 @@ export default function Projects() {
             gap: var(--col-gap);
           }
 
-          .project-col-1,
-          .project-col-2 {
-            border-right: none;
-            padding-right: 0;
+          .project-divider {
+            display: none;
           }
 
           .project-card:not(:last-child) {
@@ -282,15 +276,10 @@ export default function Projects() {
           {/* GRID */}
           <div className="projects-grid">
             {projects.map((project, index) => {
-              const isLastCol = (index + 1) % 3 === 0
-              const colClass = !isLastCol 
-                ? (index % 3 === 0 ? 'project-col-1' : 'project-col-2')
-                : ''
-
               return (
+                <Fragment key={project.id}>
                 <div
-                  key={project.id}
-                  className={`project-card reveal ${colClass}`}
+                  className={`project-card reveal`}
                   style={{ '--delay': project.delay }}
                 >
                   <div className="article-number">{project.articleNum}</div>
@@ -380,16 +369,31 @@ export default function Projects() {
                       </a>
                     ))}
                     {project.comingSoon && (
-                      <button
-                        className="project-coming-soon"
-                        type="button"
+                      <button 
                         onClick={() => setShowModal(true)}
+                        style={{
+                          fontFamily: "'Space Mono', monospace",
+                          fontSize: '11px',
+                          letterSpacing: '1px',
+                          border: '1px solid #999999',
+                          background: 'transparent',
+                          color: '#888888',
+                          padding: '8px 16px',
+                          cursor: 'pointer',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px'
+                        }}
                       >
                         Live: Coming Soon
                       </button>
                     )}
                   </div>
                 </div>
+                {index < projects.length - 1 && (
+                  <div className="project-divider" />
+                )}
+                </Fragment>
               )
             })}
           </div>

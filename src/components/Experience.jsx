@@ -48,10 +48,6 @@ export default function Experience() {
           border-left: 3px solid var(--ink);
         }
 
-        .exp-item-2 {
-          border-left: 3px solid var(--rule);
-        }
-
         .exp-date {
           font-family: 'Space Mono', monospace;
           font-size: 10px;
@@ -77,6 +73,56 @@ export default function Experience() {
         }
 
         .exp-body {
+          color: var(--ink-secondary);
+        }
+
+        .exp-highlights {
+          margin: 16px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .exp-highlight-item {
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          font-size: 14px;
+          line-height: 1.6;
+          color: var(--ink-secondary);
+          font-family: var(--body-font);
+        }
+
+        .exp-highlight-marker {
+          flex-shrink: 0;
+          width: 6px;
+          height: 6px;
+          background: var(--accent);
+          margin-top: 7px;
+        }
+
+        .exp-key-contribution {
+          border: 2px solid var(--accent);
+          padding: 16px 20px;
+          margin-top: 20px;
+          position: relative;
+        }
+
+        .exp-key-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 9px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-bottom: 8px;
+          font-weight: 700;
+        }
+
+        .exp-key-text {
+          font-family: 'DM Serif Display', serif;
+          font-size: 16px;
+          font-style: italic;
+          line-height: 1.6;
           color: var(--ink-secondary);
         }
 
@@ -163,23 +209,62 @@ export default function Experience() {
       <section id="experience" style={styles.expSection}>
         <div className="exp-container">
           <div className="exp-col-left reveal">
-            <div className="exp-header">A record of deployments, training, and project work in the field.</div>
+            <div className="exp-header">Hands-on engineering work beyond the classroom.</div>
             <div className="exp-item exp-item-1">
               <div className="exp-date">AUG 2025 - SEP 2025</div>
-              <h3 className="exp-title">Robocon Club - Web Dev Intern</h3>
-              <div className="exp-location">SRM KTR, Chennai</div>
-              <div className="exp-body drop-cap">
-                Completed intensive full-stack training building responsive web interfaces with HTML, CSS and JavaScript alongside backend development using Node.js and Express. Managed codebase with Git in a collaborative team environment and independently resolved frontend and backend issues.
+              <h3 className="exp-title">Robocon Club — Web Development Intern</h3>
+              <div className="exp-location">SRM Institute of Science & Technology, Chennai</div>
+              
+              <div className="exp-highlights">
+                <div className="exp-highlight-item">
+                  <div className="exp-highlight-marker" />
+                  <span>Built responsive web interfaces end-to-end using HTML, CSS, JavaScript, and integrated them with Node.js and Express backends</span>
+                </div>
+                <div className="exp-highlight-item">
+                  <div className="exp-highlight-marker" />
+                  <span>Collaborated with a multi-disciplinary team of 15+ members, managing shared codebases through Git with structured branching workflows</span>
+                </div>
+                <div className="exp-highlight-item">
+                  <div className="exp-highlight-marker" />
+                  <span>Independently debugged and resolved critical frontend-backend integration issues under tight competition deadlines</span>
+                </div>
+                <div className="exp-highlight-item">
+                  <div className="exp-highlight-marker" />
+                  <span>Delivered production-ready modules that were directly used in the club's competition submissions</span>
+                </div>
+              </div>
+
+              <div className="exp-key-contribution">
+                <div className="exp-key-label">Key Contribution</div>
+                <div className="exp-key-text">
+                  Owned the full web development pipeline for competition deliverables — from UI design to API integration — in a high-pressure, deadline-driven environment.
+                </div>
               </div>
             </div>
-            <div className="exp-item exp-item-2">
-              <div className="exp-date">2024 - PRESENT</div>
-              <h3 className="exp-title">SRM Institute of Science & Technology</h3>
-              <div className="exp-location">B.Tech Artificial Intelligence</div>
-              <div className="exp-stats">
-                <div className="exp-stat">CGPA: 8.67</div>
-                <div className="exp-stat">SEM: 4th</div>
-                <div className="exp-stat">BATCH: 2028</div>
+
+            <div style={{ borderLeft: '3px solid var(--rule)', paddingLeft: '16px', marginTop: '24px' }}>
+              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '4px' }}>
+                2024 — Present
+              </div>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: '700', color: 'var(--ink)', marginBottom: '4px' }}>
+                SRM Institute of Science & Technology
+              </h3>
+              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', color: 'var(--ink-faint)', marginBottom: '12px' }}>
+                B.Tech Artificial Intelligence · Kattankulathur
+              </div>
+              <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+                <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700' }}>8.67</div>
+                  <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '1px' }}>CGPA</div>
+                </div>
+                <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700' }}>4th</div>
+                  <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '1px' }}>Semester</div>
+                </div>
+                <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700' }}>2028</div>
+                  <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '1px' }}>Graduation</div>
+                </div>
               </div>
             </div>
           </div>
@@ -190,7 +275,7 @@ export default function Experience() {
                   About the Developer
                 </div>
                 <p className="exp-about-body">
-                  Second year B.Tech Artificial Intelligence student at SRM KTR. Builds full-stack products with React, Node.js, and Python. Currently exploring ML - training models, not just listing the skill.
+                  B.Tech AI student at SRM KTR with an 8.67 CGPA. Builds full-stack products with React, Node.js, and Python. Ships to production — not just to GitHub.
                 </p>
               </div>
               <div className="exp-stats-box">
@@ -204,15 +289,15 @@ export default function Experience() {
                   </div>
                   <div className="exp-stat-item">
                     <div className="exp-stat-value">3</div>
-                    <div className="exp-stat-label">Projects Shipped</div>
+                    <div className="exp-stat-label">Products Shipped</div>
                   </div>
                   <div className="exp-stat-item">
                     <div className="exp-stat-value">2</div>
-                    <div className="exp-stat-label">Live Products</div>
+                    <div className="exp-stat-label">Live in Production</div>
                   </div>
                   <div className="exp-stat-item">
-                    <div className="exp-stat-value">4th</div>
-                    <div className="exp-stat-label">Semester</div>
+                    <div className="exp-stat-value">15+</div>
+                    <div className="exp-stat-label">TEAM MEMBERS</div>
                   </div>
                 </div>
               </div>

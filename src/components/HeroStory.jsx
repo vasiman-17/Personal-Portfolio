@@ -1,3 +1,5 @@
+import Terminal from './Terminal'
+
 export default function HeroStory() {
   return (
     <>
@@ -5,7 +7,7 @@ export default function HeroStory() {
         .hero-container {
           display: grid;
           grid-template-columns: 2fr 1.2fr 1fr;
-          align-items: start;
+          align-items: stretch;
           gap: var(--col-gap);
           max-width: var(--max-width);
           margin: 0 auto;
@@ -20,6 +22,10 @@ export default function HeroStory() {
         .hero-col-2 {
           border-right: 1px solid var(--rule);
           padding-right: var(--col-gap);
+        }
+
+        .hero-col-3 {
+          padding-bottom: 0;
         }
 
         .hero-col-1.reveal,
@@ -69,12 +75,11 @@ export default function HeroStory() {
         }
 
         .hero-body {
-          column-count: 2;
-          column-gap: 20px;
-          column-rule: 1px solid var(--rule);
           margin: 16px 0;
           color: var(--ink);
-          overflow: visible;
+          font-family: var(--body-font);
+          font-size: 15px;
+          line-height: 1.6;
         }
 
         .hero-button {
@@ -161,33 +166,17 @@ export default function HeroStory() {
           border-bottom: 1px solid var(--rule);
         }
 
-        .hero-profile-body {
+        .hero-profile-line {
           font-family: 'Space Mono', monospace;
-          font-size: 12px;
+          font-size: 11px;
           color: var(--ink-secondary);
-          line-height: 1.9;
+          line-height: 2;
+          padding: 3px 0;
+          border-bottom: 1px solid var(--rule);
         }
 
-        .hero-col3-feature {
-          margin-top: 16px;
-          border: 1px solid var(--rule);
-          padding: 10px;
-        }
-
-        .hero-col3-feature-image {
-          width: 100%;
-          height: 140px;
-          object-fit: cover;
-          border: 1px solid var(--rule);
-          margin-bottom: 10px;
-          filter: grayscale(72%) sepia(10%) contrast(1.05);
-        }
-
-        .hero-col3-feature-caption {
-          font-family: 'Space Mono', monospace;
-          font-size: 10px;
-          color: var(--ink-faint);
-          line-height: 1.6;
+        .hero-profile-line:last-child {
+          border-bottom: none;
         }
 
         .hero-photo-wrap {
@@ -264,13 +253,13 @@ export default function HeroStory() {
             <div className="breaking-tag">EXCLUSIVE</div>
 
             <h1 className="hero-headline">
-              Local Developer Ships AI Tool That Reviews Code Like a Senior Engineer
+              PRism: The AI Tool That Reviews Your GitHub Pull Requests Like a Senior Engineer
             </h1>
 
             <hr className="hero-headline-rule" />
 
             <div className="hero-subheadline">
-              PRism analyzes GitHub Pull Requests using Groq Llama 3, delivering structured feedback with cinematic Three.js animations — deployed and live.
+              PRism reads GitHub pull requests, scores risk, and delivers structured review feedback in seconds — not days.
             </div>
 
             <div className="byline">
@@ -278,24 +267,24 @@ export default function HeroStory() {
             </div>
 
             <div className="hero-body">
-              PRism emerged from a simple question: why do developers wait days for code review when the feedback could arrive in seconds? Built entirely solo by a second-year student, the tool connects directly to GitHub, reads every line of a pull request, and returns a structured review - risks identified, improvements specified, risk score calculated. Deployed on Vercel and Render. Free to use. Live now.
+              PRism emerged from a simple question: why do developers wait days for code review when the feedback could arrive in seconds? Built entirely solo, the tool connects directly to GitHub, reads every line of a pull request diff, and returns a structured review — risks identified, improvements specified, risk score calculated. Deployed on Vercel and Render. Free to use.
             </div>
 
             <div className="pull-quote">
-              I build things that ship. Not just things that look good.
+              Three products shipped. Two in production. One developer.
             </div>
 
             <div>
-              <a href="https://prism-black-five.vercel.app/" target="_blank" rel="noopener noreferrer" className="hero-button hero-button-primary">
-                Read Full Story →
+              <a href="#work" className="hero-button hero-button-primary">
+                See the Work →
               </a>
-              <a href="https://github.com/vasiman-17/Prism" target="_blank" rel="noopener noreferrer" className="hero-button hero-button-secondary">
-                View Source →
+              <a href="https://prism-black-five.vercel.app/" target="_blank" rel="noopener noreferrer" className="hero-button hero-button-secondary">
+                Try PRism Live →
               </a>
             </div>
           </div>
 
-          {/* COLUMN 2 — PHOTO & CAPTION */}
+          {/* COLUMN 2 — PHOTO, PROFILE & TERMINAL */}
           <div className="hero-col-2 reveal">
             <div className="hero-photo-wrap">
               <img
@@ -307,31 +296,33 @@ export default function HeroStory() {
             </div>
 
             <div style={styles.caption}>
-              Vaibhav Vasistha, 2nd year B.Tech AI, SRM Kattankulathur - building production tools from Chennai.
+              Vaibhav Vasistha, B.Tech AI, SRM Kattankulathur — shipping production software from Chennai.
             </div>
 
             <div className="hero-profile-box">
-              <div className="hero-profile-title">From the Chennai Desk</div>
-              <div className="hero-profile-body">
-                <div>Second-year B.Tech AI student at SRM KTR.</div>
-                <div>Builds and ships full-stack products, not mockups.</div>
-                <div>Currently looking for internship opportunities.</div>
-              </div>
+              <div className="hero-profile-title">Developer Profile</div>
+              <div className="hero-profile-line">Full-stack developer</div>
+              <div className="hero-profile-line">React · Node.js · Python</div>
+              <div className="hero-profile-line">3 products shipped</div>
+              <div className="hero-profile-line">CGPA 8.67 · SRM KTR · 2nd Year</div>
+              <div className="hero-profile-line" style={{ borderBottom: 'none' }}>Available for internships</div>
             </div>
+
+            <Terminal />
           </div>
 
           {/* COLUMN 3 — ALSO INSIDE */}
-          <div className="hero-col-3 reveal">
+          <div className="hero-col-3 reveal" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={styles.alsoInsideLabel}>ALSO INSIDE</div>
 
             {/* TEASER 1 */}
             <div className="hero-teaser">
               <div className="hero-teaser-page">P.2</div>
               <div className="hero-teaser-headline">
-                <a className="hero-teaser-link" href="#work">Flowboard: Build API Workflows Visually</a>
+                <a className="hero-teaser-link" href="#work">Full Project Archive: 3 Shipped Products</a>
               </div>
               <div className="hero-teaser-body">
-                DAG-based execution engine ships.
+                PRism, Syncro, and Flowboard — with live demos.
               </div>
             </div>
 
@@ -339,10 +330,10 @@ export default function HeroStory() {
             <div className="hero-teaser">
               <div className="hero-teaser-page">P.3</div>
               <div className="hero-teaser-headline">
-                <a className="hero-teaser-link" href="#skills">Skills Inventory: 2025 Edition</a>
+                <a className="hero-teaser-link" href="#skills">Technical Stack: 2025 Edition</a>
               </div>
               <div className="hero-teaser-body">
-                React, Node, Python, Three.js and more.
+                React, Node, Python, Three.js, GSAP, and more.
               </div>
             </div>
 
@@ -350,22 +341,72 @@ export default function HeroStory() {
             <div className="hero-teaser">
               <div className="hero-teaser-page">P.4</div>
               <div className="hero-teaser-headline">
-                <a className="hero-teaser-link" href="#contact">Internship Applications Open</a>
+                <a className="hero-teaser-link" href="#contact">Open to Opportunities</a>
               </div>
               <div className="hero-teaser-body">
-                Developer available for summer 2025.
+                Available for roles starting Summer 2025.
               </div>
             </div>
 
-            <div className="hero-col3-feature">
-              <img
-                src="/assets/prism.png"
-                alt="PRism production preview"
-                className="hero-col3-feature-image"
-              />
-              <div className="hero-col3-feature-caption">
-                This week&apos;s build: PRism in production, reviewing live pull requests with structured risk scoring.
+            {/* INDEX */}
+            <div className="hero-index" style={{ marginTop: '24px', borderTop: '2px solid var(--ink)', borderBottom: '2px solid var(--ink)', padding: '12px 0' }}>
+              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px', color: 'var(--ink)' }}>
+                INDEX
               </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
+                <span>Front Page</span>
+                <span>A1</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
+                <span>Projects</span>
+                <span>B1</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
+                <span>Experience</span>
+                <span>C1</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
+                <span>Skills</span>
+                <span>D1</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
+                <span>Contact</span>
+                <span>E1</span>
+              </div>
+            </div>
+
+            {/* BARCODE */}
+            <div style={{ marginTop: 'auto', paddingTop: '32px', textAlign: 'center' }}>
+              <svg width="140" height="50" viewBox="0 0 140 50" style={{ opacity: 0.8 }}>
+                 <rect x="0" y="0" width="3" height="40" fill="var(--ink)"/>
+                 <rect x="5" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="8" y="0" width="4" height="40" fill="var(--ink)"/>
+                 <rect x="14" y="0" width="2" height="40" fill="var(--ink)"/>
+                 <rect x="18" y="0" width="6" height="40" fill="var(--ink)"/>
+                 <rect x="26" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="29" y="0" width="3" height="40" fill="var(--ink)"/>
+                 <rect x="34" y="0" width="5" height="40" fill="var(--ink)"/>
+                 <rect x="41" y="0" width="2" height="40" fill="var(--ink)"/>
+                 <rect x="45" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="48" y="0" width="4" height="40" fill="var(--ink)"/>
+                 <rect x="54" y="0" width="2" height="40" fill="var(--ink)"/>
+                 <rect x="58" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="61" y="0" width="3" height="40" fill="var(--ink)"/>
+                 <rect x="66" y="0" width="5" height="40" fill="var(--ink)"/>
+                 <rect x="73" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="76" y="0" width="2" height="40" fill="var(--ink)"/>
+                 <rect x="80" y="0" width="4" height="40" fill="var(--ink)"/>
+                 <rect x="86" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="89" y="0" width="3" height="40" fill="var(--ink)"/>
+                 <rect x="94" y="0" width="2" height="40" fill="var(--ink)"/>
+                 <rect x="98" y="0" width="6" height="40" fill="var(--ink)"/>
+                 <rect x="106" y="0" width="1" height="40" fill="var(--ink)"/>
+                 <rect x="109" y="0" width="4" height="40" fill="var(--ink)"/>
+                 <rect x="115" y="0" width="2" height="40" fill="var(--ink)"/>
+                 <rect x="119" y="0" width="1" height="40" fill="var(--ink)"/>
+                 
+                 <text x="60" y="48" fontFamily="'Space Mono', monospace" fontSize="8" fill="var(--ink)" textAnchor="middle" letterSpacing="3px">01101000 01101001</text>
+              </svg>
             </div>
           </div>
         </div>

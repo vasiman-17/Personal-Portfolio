@@ -40,8 +40,8 @@ export default function Footer() {
 
       <footer className="footer">
         <div className="footer-name">Vasistha Times</div>
-        <div className="footer-edition">Chennai Edition · Full-Stack Developer · 2025</div>
-        <div className="footer-copyright">© Vaibhav Vasistha 2025</div>
+        <div className="footer-edition">Chennai Edition · Full-Stack Developer · {new Date().getFullYear()}</div>
+        <div className="footer-copyright">© Vaibhav Vasistha {new Date().getFullYear()}</div>
       </footer>
     </>
   )

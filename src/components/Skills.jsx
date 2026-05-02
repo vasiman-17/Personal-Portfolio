@@ -2,23 +2,64 @@ export default function Skills() {
   const skillSections = [
     {
       title: 'Frontend',
-      skills: ['React', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Tailwind CSS', 'Three.js', 'GSAP'],
-      footer: 'Self-taught · Available now',
+      skills: [
+        { name: 'React', level: 4 },
+        { name: 'JavaScript ES6+', level: 4 },
+        { name: 'HTML5', level: 5 },
+        { name: 'CSS3', level: 5 },
+        { name: 'Tailwind CSS', level: 3 },
+        { name: 'Three.js', level: 3 },
+        { name: 'GSAP', level: 3 }
+      ],
+      footer: 'Production-tested',
       delay: '0s'
     },
     {
       title: 'Backend',
-      skills: ['Node.js', 'Express.js', 'Python', 'Flask', 'MongoDB', 'REST APIs', 'Groq API'],
-      footer: 'Deployed to production · Available now',
+      skills: [
+        { name: 'Node.js', level: 4 },
+        { name: 'Express.js', level: 4 },
+        { name: 'Python', level: 4 },
+        { name: 'Flask', level: 3 },
+        { name: 'MongoDB', level: 4 },
+        { name: 'REST APIs', level: 5 },
+        { name: 'Groq API', level: 3 }
+      ],
+      footer: 'Deployed to production',
       delay: '0.15s'
     },
     {
       title: 'Tools & Platforms',
-      skills: ['Git', 'GitHub', 'Vercel', 'Render', 'Postman', 'VS Code', 'Linux Terminal'],
-      footer: 'Used daily · Available now',
+      skills: [
+        { name: 'Git', level: 5 },
+        { name: 'GitHub', level: 5 },
+        { name: 'Vercel', level: 4 },
+        { name: 'Render', level: 3 },
+        { name: 'Postman', level: 4 },
+        { name: 'VS Code', level: 5 },
+        { name: 'Linux Terminal', level: 3 }
+      ],
+      footer: 'Used daily in production workflow',
       delay: '0.3s'
     }
   ]
+
+  const renderDots = (level) => {
+    return (
+      <span style={styles.dotsContainer}>
+        {[1, 2, 3, 4, 5].map(i => (
+          <span
+            key={i}
+            style={{
+              ...styles.dot,
+              background: i <= level ? 'var(--ink)' : 'transparent',
+              border: i <= level ? '1px solid var(--ink)' : '1px solid var(--rule)'
+            }}
+          />
+        ))}
+      </span>
+    )
+  }
 
   return (
     <>
@@ -48,6 +89,12 @@ export default function Skills() {
           padding: 20px;
           opacity: 1;
           transform: none;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills-ad:hover {
+          border-color: var(--accent);
+          box-shadow: 4px 4px 0px var(--accent);
         }
 
         .skills-ad.visible {
@@ -91,9 +138,18 @@ export default function Skills() {
         .skill-item {
           font-family: 'Space Mono', monospace;
           font-size: 12px;
-          padding: 4px 0;
+          padding: 6px 0;
           border-bottom: 1px solid rgba(153, 153, 153, 0.3);
           color: var(--ink);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: background 0.15s ease, padding-left 0.15s ease;
+        }
+
+        .skill-item:hover {
+          background: rgba(139, 0, 0, 0.04);
+          padding-left: 6px;
         }
 
         .skill-item:last-child {
@@ -103,8 +159,11 @@ export default function Skills() {
         .skills-footer {
           font-family: 'Space Mono', monospace;
           font-size: 9px;
-          color: var(--ink-faint);
-          font-style: italic;
+          color: var(--accent);
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin-top: 4px;
         }
 
         @media (max-width: 768px) {
@@ -126,7 +185,10 @@ export default function Skills() {
                 <hr className="skills-rule-2" />
                 <div className="skills-list">
                   {section.skills.map((skill, i) => (
-                    <div key={i} className="skill-item">{skill}</div>
+                    <div key={i} className="skill-item">
+                      <span>{skill.name}</span>
+                      {renderDots(skill.level)}
+                    </div>
                   ))}
                 </div>
                 <div className="skills-footer">{section.footer}</div>
@@ -143,5 +205,16 @@ const styles = {
   skillsSection: {
     width: '100%',
     backgroundColor: 'var(--paper)'
+  },
+  dotsContainer: {
+    display: 'flex',
+    gap: '3px',
+    alignItems: 'center'
+  },
+  dot: {
+    width: '7px',
+    height: '7px',
+    borderRadius: '50%',
+    display: 'inline-block'
   }
 }
