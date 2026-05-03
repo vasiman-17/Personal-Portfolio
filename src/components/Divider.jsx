@@ -25,7 +25,7 @@ const styles = {
     backgroundColor: 'var(--paper)',
     paddingLeft: '32px',
     paddingRight: '32px',
-    paddingTop: '32px'
+    paddingTop: '18px'
   },
   container: {
     maxWidth: 'var(--max-width)',

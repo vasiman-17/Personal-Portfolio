@@ -124,6 +124,37 @@ export default function HeroStory() {
           color: var(--paper);
         }
 
+        .hero-glance {
+          margin-top: 20px;
+          border-top: 1px solid var(--rule);
+          border-bottom: 1px solid var(--rule);
+          padding: 10px 0;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 12px;
+        }
+
+        .hero-glance-item {
+          border-left: 2px solid var(--accent);
+          padding-left: 10px;
+        }
+
+        .hero-glance-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 8px;
+          letter-spacing: 1.6px;
+          text-transform: uppercase;
+          color: var(--ink-faint);
+          margin-bottom: 4px;
+        }
+
+        .hero-glance-value {
+          font-family: 'Playfair Display', serif;
+          font-size: 17px;
+          line-height: 1.25;
+          color: var(--ink);
+        }
+
         .hero-teaser {
           border-bottom: 1px solid var(--rule);
           padding: 12px 0;
@@ -250,14 +281,14 @@ export default function HeroStory() {
         }
 
         .dispatch-board {
-          margin-top: 20px;
+          margin-top: 16px;
           border: 1px solid var(--ink);
           background: linear-gradient(180deg, #161616 0%, #070707 100%);
           color: var(--paper);
           position: relative;
           overflow: hidden;
           flex: 1 1 auto;
-          min-height: 360px;
+          min-height: 250px;
           display: flex;
           flex-direction: column;
         }
@@ -419,9 +450,14 @@ export default function HeroStory() {
             padding: 14px 0;
           }
 
+          .hero-glance {
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+
           .dispatch-board {
             margin-top: 18px;
-            min-height: 320px;
+            min-height: 250px;
           }
 
           .dispatch-title {
@@ -446,7 +482,7 @@ export default function HeroStory() {
           }
 
           .dispatch-board {
-            min-height: 290px;
+            min-height: 240px;
           }
 
           .dispatch-stat-value {
@@ -491,6 +527,21 @@ export default function HeroStory() {
               <a href="https://prism-black-five.vercel.app/" target="_blank" rel="noopener noreferrer" className="hero-button hero-button-secondary">
                 Try PRism Live →
               </a>
+            </div>
+
+            <div className="hero-glance" aria-label="Quick overview">
+              <div className="hero-glance-item">
+                <div className="hero-glance-label">Focus Area</div>
+                <div className="hero-glance-value">Code Review Tools</div>
+              </div>
+              <div className="hero-glance-item">
+                <div className="hero-glance-label">Primary Stack</div>
+                <div className="hero-glance-value">React · Node · Python</div>
+              </div>
+              <div className="hero-glance-item">
+                <div className="hero-glance-label">Current Status</div>
+                <div className="hero-glance-value">Open for 2026 Roles</div>
+              </div>
             </div>
           </div>
 

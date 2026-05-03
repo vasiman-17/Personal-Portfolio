@@ -154,8 +154,8 @@ const styles = {
   },
   body: {
     padding: '16px',
-    minHeight: '200px',
-    maxHeight: '280px',
+    minHeight: '150px',
+    maxHeight: '220px',
     overflow: 'hidden'
   }
 }
