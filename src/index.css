@@ -34,6 +34,7 @@ footer, header, hgroup, menu, nav, section {
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--paper);
 }
 
 body {
@@ -64,6 +65,7 @@ table {
 /* ============================= */
 
 :root {
+  color-scheme: light;
   --paper: #f2ead8;
   --paper-dark: #e8dcc4;
   --paper-warm: #fbf4e3;
@@ -96,6 +98,10 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  background-color: var(--paper);
 }
 
 /* ============================= */
@@ -399,5 +405,15 @@ a:hover {
 
   .masthead-title {
     font-size: 36px !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  #root {
+    background: var(--paper) !important;
+    background-color: var(--paper) !important;
+    color: var(--ink) !important;
   }
 }
