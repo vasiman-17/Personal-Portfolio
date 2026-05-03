@@ -463,25 +463,25 @@ export default function HeroStory() {
             <div className="breaking-tag">EXCLUSIVE</div>
 
             <h1 className="hero-headline">
-              PRism: The AI Tool That Reviews Your GitHub Pull Requests Like a Senior Engineer
+              PRism: Faster Pull Request Reviews for Shipping Teams
             </h1>
 
             <hr className="hero-headline-rule" />
 
             <div className="hero-subheadline">
-              PRism reads GitHub pull requests, scores risk, and delivers structured review feedback in seconds — not days.
+              GitHub pull requests are analyzed for risk and review quality, then returned as structured feedback in seconds.
             </div>
 
             <div className="byline">
-              By Vaibhav Vasistha · SRM KTR · 2025
+              Product Brief · SRM KTR · 2026
             </div>
 
             <div className="hero-body">
-              PRism emerged from a simple question: why do developers wait days for code review when the feedback could arrive in seconds? Built entirely solo, the tool connects directly to GitHub, reads every line of a pull request diff, and returns a structured review — risks identified, improvements specified, risk score calculated. Deployed on Vercel and Render. Free to use.
+              PRism connects to GitHub, reads pull request diffs, and highlights risks with actionable review notes. The current release runs in production and focuses on practical engineering workflows: clear risk flags, concise suggestions, and faster decision-making during code review.
             </div>
 
             <div className="pull-quote">
-              Three products shipped. Two in production. One developer.
+              Built for clarity, speed, and practical use in real development cycles.
             </div>
 
             <div>
@@ -511,11 +511,11 @@ export default function HeroStory() {
 
             <div className="hero-profile-box">
               <div className="hero-profile-title">Developer Profile</div>
-              <div className="hero-profile-line">Full-stack developer</div>
+              <div className="hero-profile-line">Full-stack engineering student</div>
               <div className="hero-profile-line">React · Node.js · Python</div>
-              <div className="hero-profile-line">3 products shipped</div>
-              <div className="hero-profile-line">CGPA 8.67 · SRM KTR · 2nd Year</div>
-              <div className="hero-profile-line" style={{ borderBottom: 'none' }}>Available for internships</div>
+              <div className="hero-profile-line">Focus: developer tools and web platforms</div>
+              <div className="hero-profile-line">SRM KTR · B.Tech AI</div>
+              <div className="hero-profile-line" style={{ borderBottom: 'none' }}>Open for internships and entry-level roles</div>
             </div>
 
             <Terminal />
@@ -529,7 +529,7 @@ export default function HeroStory() {
             <div className="hero-teaser">
               <div className="hero-teaser-page">P.2</div>
               <div className="hero-teaser-headline">
-                <a className="hero-teaser-link" href="#work">Full Project Archive: 3 Shipped Products</a>
+                <a className="hero-teaser-link" href="#work">Project Archive: Product Builds and Live Demos</a>
               </div>
               <div className="hero-teaser-body">
                 PRism, Syncro, and Flowboard — with live demos.
