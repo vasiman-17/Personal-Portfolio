@@ -4,26 +4,38 @@ export default function Ticker() {
   return (
     <>
       <style>{`
-        @keyframes ticker {
+        @keyframes tickerLoop {
           0% {
-            transform: translateX(100vw);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
-        .ticker-content {
-          animation: ticker 35s linear infinite;
+
+        .ticker-track {
+          display: flex;
+          width: max-content;
           white-space: nowrap;
+          animation: tickerLoop 36s linear infinite;
         }
-        .ticker-content:hover {
+
+        .ticker-track:hover {
           animation-play-state: paused;
+        }
+
+        .ticker-line {
+          display: inline-block;
+          padding-right: 40px;
         }
       `}</style>
       <div style={styles.tickerBar}>
         <div style={styles.breakingLabel}>BREAKING</div>
         <div style={styles.tickerContent}>
-          <span className="ticker-content">{tickerContent}</span>
+          <div className="ticker-track" aria-label="Live updates ticker">
+            <span className="ticker-line">{tickerContent}</span>
+            <span className="ticker-line" aria-hidden="true">{tickerContent}</span>
+          </div>
         </div>
       </div>
     </>
@@ -60,6 +72,8 @@ const styles = {
     letterSpacing: '2px',
     marginLeft: '100px',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    overflow: 'hidden',
+    width: '100%'
   }
 }

@@ -367,11 +367,17 @@ export default function HeroStory() {
           background: rgba(0, 0, 0, 0.32);
         }
 
+        .dispatch-feed-track {
+          display: flex;
+          flex-direction: column;
+          animation: dispatchCrawl 14s linear infinite;
+          will-change: transform;
+        }
+
         .dispatch-feed-list {
           padding: 0;
           margin: 0;
           list-style: none;
-          animation: dispatchCrawl 12s linear infinite;
         }
 
         .dispatch-feed-item {
@@ -574,16 +580,22 @@ export default function HeroStory() {
                 </div>
 
                 <div className="dispatch-feed">
-                  <ul className="dispatch-feed-list">
-                    <li className="dispatch-feed-item">PRISM REPORTING LIVE REVIEW FEEDS</li>
-                    <li className="dispatch-feed-item">SYNCRO MATCH ENGINE STABLE AND ONLINE</li>
-                    <li className="dispatch-feed-item">FLOWBOARD EXECUTION GRAPH IN MOTION</li>
-                    <li className="dispatch-feed-item">NEW BUILD RECEIVED READY FOR TESTING</li>
-                    <li className="dispatch-feed-item">OPEN FOR INTERNSHIPS AND PRODUCT WORK</li>
-                    <li className="dispatch-feed-item">PRISM REPORTING LIVE REVIEW FEEDS</li>
-                    <li className="dispatch-feed-item">SYNCRO MATCH ENGINE STABLE AND ONLINE</li>
-                    <li className="dispatch-feed-item">FLOWBOARD EXECUTION GRAPH IN MOTION</li>
-                  </ul>
+                  <div className="dispatch-feed-track">
+                    <ul className="dispatch-feed-list">
+                      <li className="dispatch-feed-item">PRISM REPORTING LIVE REVIEW FEEDS</li>
+                      <li className="dispatch-feed-item">SYNCRO MATCH ENGINE STABLE AND ONLINE</li>
+                      <li className="dispatch-feed-item">FLOWBOARD EXECUTION GRAPH IN MOTION</li>
+                      <li className="dispatch-feed-item">NEW BUILD RECEIVED READY FOR TESTING</li>
+                      <li className="dispatch-feed-item">OPEN FOR INTERNSHIPS AND PRODUCT WORK</li>
+                    </ul>
+                    <ul className="dispatch-feed-list" aria-hidden="true">
+                      <li className="dispatch-feed-item">PRISM REPORTING LIVE REVIEW FEEDS</li>
+                      <li className="dispatch-feed-item">SYNCRO MATCH ENGINE STABLE AND ONLINE</li>
+                      <li className="dispatch-feed-item">FLOWBOARD EXECUTION GRAPH IN MOTION</li>
+                      <li className="dispatch-feed-item">NEW BUILD RECEIVED READY FOR TESTING</li>
+                      <li className="dispatch-feed-item">OPEN FOR INTERNSHIPS AND PRODUCT WORK</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
