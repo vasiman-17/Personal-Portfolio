@@ -219,6 +219,171 @@ export default function HeroStory() {
           text-underline-offset: 3px;
         }
 
+        @keyframes dispatchPulse {
+          0%,
+          100% {
+            opacity: 0.24;
+            transform: scaleX(0.82);
+          }
+          50% {
+            opacity: 0.62;
+            transform: scaleX(1);
+          }
+        }
+
+        @keyframes dispatchSweep {
+          0% {
+            transform: translateX(-45%);
+          }
+          100% {
+            transform: translateX(50%);
+          }
+        }
+
+        @keyframes dispatchCrawl {
+          0% {
+            transform: translateY(0%);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        .dispatch-board {
+          margin-top: 20px;
+          border: 1px solid var(--ink);
+          background: linear-gradient(180deg, #161616 0%, #070707 100%);
+          color: var(--paper);
+          position: relative;
+          overflow: hidden;
+          flex: 1 1 auto;
+          min-height: 360px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .dispatch-board::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: repeating-linear-gradient(
+            0deg,
+            rgba(242, 234, 216, 0.07) 0 1px,
+            transparent 1px 4px
+          );
+          pointer-events: none;
+        }
+
+        .dispatch-top {
+          position: relative;
+          z-index: 1;
+          border-bottom: 1px solid rgba(242, 234, 216, 0.36);
+          padding: 12px 14px 10px;
+        }
+
+        .dispatch-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 8px;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: rgba(242, 234, 216, 0.75);
+          margin-bottom: 7px;
+        }
+
+        .dispatch-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 18px;
+          line-height: 1.2;
+          color: var(--paper);
+        }
+
+        .dispatch-grid {
+          position: relative;
+          z-index: 1;
+          padding: 14px;
+          flex: 1;
+          display: grid;
+          grid-template-rows: auto auto 1fr;
+          gap: 12px;
+        }
+
+        .dispatch-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        .dispatch-stat {
+          border: 1px solid rgba(242, 234, 216, 0.35);
+          padding: 10px;
+          background: rgba(0, 0, 0, 0.22);
+        }
+
+        .dispatch-stat-value {
+          font-family: 'Playfair Display', serif;
+          font-size: 28px;
+          color: var(--paper);
+          line-height: 1;
+        }
+
+        .dispatch-stat-label {
+          margin-top: 6px;
+          font-family: 'Space Mono', monospace;
+          font-size: 8px;
+          letter-spacing: 1.6px;
+          text-transform: uppercase;
+          color: rgba(242, 234, 216, 0.72);
+        }
+
+        .dispatch-signal {
+          border: 1px solid rgba(242, 234, 216, 0.3);
+          padding: 12px 10px;
+          position: relative;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.24);
+        }
+
+        .dispatch-signal::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 62%;
+          background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.16) 55%, transparent 100%);
+          animation: dispatchSweep 4s linear infinite;
+        }
+
+        .dispatch-wave {
+          height: 2px;
+          background: rgba(255, 215, 0, 0.88);
+          animation: dispatchPulse 1.8s ease-in-out infinite;
+          transform-origin: left;
+        }
+
+        .dispatch-feed {
+          border: 1px solid rgba(242, 234, 216, 0.24);
+          position: relative;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.32);
+        }
+
+        .dispatch-feed-list {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          animation: dispatchCrawl 12s linear infinite;
+        }
+
+        .dispatch-feed-item {
+          font-family: 'Space Mono', monospace;
+          font-size: 9px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: rgba(242, 234, 216, 0.86);
+          padding: 9px 10px;
+          border-bottom: 1px solid rgba(242, 234, 216, 0.16);
+        }
+
         @media (max-width: 768px) {
           .hero-container {
             grid-template-columns: 1fr;
@@ -344,69 +509,44 @@ export default function HeroStory() {
                 <a className="hero-teaser-link" href="#contact">Open to Opportunities</a>
               </div>
               <div className="hero-teaser-body">
-                Available for roles starting Summer 2025.
+                Available for roles starting Summer 2026.
               </div>
             </div>
 
-            {/* INDEX */}
-            <div className="hero-index" style={{ marginTop: '24px', borderTop: '2px solid var(--ink)', borderBottom: '2px solid var(--ink)', padding: '12px 0' }}>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px', color: 'var(--ink)' }}>
-                INDEX
+            <div className="dispatch-board">
+              <div className="dispatch-top">
+                <div className="dispatch-label">LIVE SIGNAL DESK</div>
+                <div className="dispatch-title">Production Dispatch Monitor</div>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
-                <span>Front Page</span>
-                <span>A1</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
-                <span>Projects</span>
-                <span>B1</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
-                <span>Experience</span>
-                <span>C1</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
-                <span>Skills</span>
-                <span>D1</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', fontSize: '11px', fontFamily: "'Space Mono', monospace", color: 'var(--ink-secondary)' }}>
-                <span>Contact</span>
-                <span>E1</span>
-              </div>
-            </div>
+              <div className="dispatch-grid">
+                <div className="dispatch-row">
+                  <div className="dispatch-stat">
+                    <div className="dispatch-stat-value">03</div>
+                    <div className="dispatch-stat-label">Systems Active</div>
+                  </div>
+                  <div className="dispatch-stat">
+                    <div className="dispatch-stat-value">24/7</div>
+                    <div className="dispatch-stat-label">Signal Watch</div>
+                  </div>
+                </div>
 
-            {/* BARCODE */}
-            <div style={{ marginTop: 'auto', paddingTop: '32px', textAlign: 'center' }}>
-              <svg width="140" height="50" viewBox="0 0 140 50" style={{ opacity: 0.8 }}>
-                 <rect x="0" y="0" width="3" height="40" fill="var(--ink)"/>
-                 <rect x="5" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="8" y="0" width="4" height="40" fill="var(--ink)"/>
-                 <rect x="14" y="0" width="2" height="40" fill="var(--ink)"/>
-                 <rect x="18" y="0" width="6" height="40" fill="var(--ink)"/>
-                 <rect x="26" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="29" y="0" width="3" height="40" fill="var(--ink)"/>
-                 <rect x="34" y="0" width="5" height="40" fill="var(--ink)"/>
-                 <rect x="41" y="0" width="2" height="40" fill="var(--ink)"/>
-                 <rect x="45" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="48" y="0" width="4" height="40" fill="var(--ink)"/>
-                 <rect x="54" y="0" width="2" height="40" fill="var(--ink)"/>
-                 <rect x="58" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="61" y="0" width="3" height="40" fill="var(--ink)"/>
-                 <rect x="66" y="0" width="5" height="40" fill="var(--ink)"/>
-                 <rect x="73" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="76" y="0" width="2" height="40" fill="var(--ink)"/>
-                 <rect x="80" y="0" width="4" height="40" fill="var(--ink)"/>
-                 <rect x="86" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="89" y="0" width="3" height="40" fill="var(--ink)"/>
-                 <rect x="94" y="0" width="2" height="40" fill="var(--ink)"/>
-                 <rect x="98" y="0" width="6" height="40" fill="var(--ink)"/>
-                 <rect x="106" y="0" width="1" height="40" fill="var(--ink)"/>
-                 <rect x="109" y="0" width="4" height="40" fill="var(--ink)"/>
-                 <rect x="115" y="0" width="2" height="40" fill="var(--ink)"/>
-                 <rect x="119" y="0" width="1" height="40" fill="var(--ink)"/>
-                 
-                 <text x="60" y="48" fontFamily="'Space Mono', monospace" fontSize="8" fill="var(--ink)" textAnchor="middle" letterSpacing="3px">01101000 01101001</text>
-              </svg>
+                <div className="dispatch-signal">
+                  <div className="dispatch-wave" />
+                </div>
+
+                <div className="dispatch-feed">
+                  <ul className="dispatch-feed-list">
+                    <li className="dispatch-feed-item">PRISM REPORTING LIVE REVIEW FEEDS</li>
+                    <li className="dispatch-feed-item">SYNCRO MATCH ENGINE STABLE AND ONLINE</li>
+                    <li className="dispatch-feed-item">FLOWBOARD EXECUTION GRAPH IN MOTION</li>
+                    <li className="dispatch-feed-item">NEW BUILD RECEIVED READY FOR TESTING</li>
+                    <li className="dispatch-feed-item">OPEN FOR INTERNSHIPS AND PRODUCT WORK</li>
+                    <li className="dispatch-feed-item">PRISM REPORTING LIVE REVIEW FEEDS</li>
+                    <li className="dispatch-feed-item">SYNCRO MATCH ENGINE STABLE AND ONLINE</li>
+                    <li className="dispatch-feed-item">FLOWBOARD EXECUTION GRAPH IN MOTION</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -242,31 +242,6 @@ export default function Experience() {
               </div>
             </div>
 
-            <div style={{ borderLeft: '3px solid var(--rule)', paddingLeft: '16px', marginTop: '24px' }}>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '4px' }}>
-                2024 — Present
-              </div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: '700', color: 'var(--ink)', marginBottom: '4px' }}>
-                SRM Institute of Science & Technology
-              </h3>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', color: 'var(--ink-faint)', marginBottom: '12px' }}>
-                B.Tech Artificial Intelligence · Kattankulathur
-              </div>
-              <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-                <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700' }}>8.67</div>
-                  <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '1px' }}>CGPA</div>
-                </div>
-                <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700' }}>4th</div>
-                  <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '1px' }}>Semester</div>
-                </div>
-                <div style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '22px', fontWeight: '700' }}>2028</div>
-                  <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: 'var(--ink-faint)', textTransform: 'uppercase', letterSpacing: '1px' }}>Graduation</div>
-                </div>
-              </div>
-            </div>
           </div>
           <div className="exp-col-right reveal">
             <div className="exp-right-stack">
