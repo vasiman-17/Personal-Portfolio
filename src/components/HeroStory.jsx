@@ -400,12 +400,51 @@ export default function HeroStory() {
 
           .hero-col-3 {
             padding-bottom: 0;
+            min-height: 0;
           }
 
           .hero-body {
             column-count: 1;
             column-gap: 0;
             column-rule: none;
+          }
+
+          .hero-teaser {
+            padding: 14px 0;
+          }
+
+          .dispatch-board {
+            margin-top: 18px;
+            min-height: 320px;
+          }
+
+          .dispatch-title {
+            font-size: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-headline {
+            line-height: 1.15;
+            margin: 10px 0;
+          }
+
+          .hero-subheadline {
+            margin: 10px 0;
+          }
+
+          .hero-button {
+            width: 100%;
+            margin-right: 0;
+            text-align: center;
+          }
+
+          .dispatch-board {
+            min-height: 290px;
+          }
+
+          .dispatch-stat-value {
+            font-size: 24px;
           }
         }
       `}</style>

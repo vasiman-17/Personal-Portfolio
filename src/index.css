@@ -296,13 +296,18 @@ a:hover {
 
 @media (max-width: 768px) {
   :root {
-    --col-gap: 20px;
+    --col-gap: 24px;
+  }
+
+  body {
+    background-color: var(--paper);
+    background-image: none;
   }
 
   .masthead-top-row {
     flex-direction: column;
     text-align: center;
-    gap: 8px !important;
+    gap: 10px !important;
   }
 
   .masthead-top-row > div {
@@ -319,7 +324,7 @@ a:hover {
   .exp-container,
   .skills-container,
   .contact-container {
-    padding: 24px 16px !important;
+    padding: 32px 20px !important;
   }
 
   .projects-grid,
@@ -336,12 +341,13 @@ a:hover {
   }
 
   .contact-cards {
-    gap: 16px 8px !important;
+    gap: 12px !important;
   }
 
   .contact-card {
-    width: calc(50% - 8px) !important;
+    width: calc(50% - 6px) !important;
     min-width: 0 !important;
+    padding: 16px 10px !important;
   }
 
   .footer-info {
@@ -361,8 +367,16 @@ a:hover {
   }
 
   .divider {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  #about,
+  #work,
+  #experience,
+  #skills,
+  #contact {
+    scroll-margin-top: 24px;
   }
 }
 
@@ -373,6 +387,14 @@ a:hover {
 
   .contact-card {
     width: 100% !important;
+  }
+
+  .hero-container,
+  .projects-container,
+  .exp-container,
+  .skills-container,
+  .contact-container {
+    padding: 28px 16px !important;
   }
 
   .masthead-title {

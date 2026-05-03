@@ -260,8 +260,31 @@ export default function Projects() {
 
           .project-card:not(:last-child) {
             border-bottom: 3px solid var(--ink);
-            padding-bottom: 24px;
-            margin-bottom: 24px;
+            padding-bottom: 28px;
+            margin-bottom: 28px;
+          }
+
+          .project-image-frame {
+            margin: 12px 0;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .projects-header {
+            margin-bottom: 20px;
+          }
+
+          .project-headline {
+            line-height: 1.24;
+          }
+
+          .project-links {
+            gap: 6px;
+          }
+
+          .project-link {
+            width: 100%;
+            text-align: center;
           }
         }
       `}</style>

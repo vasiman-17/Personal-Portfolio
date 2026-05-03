@@ -118,6 +118,23 @@ export default function Contact() {
           font-size: 11px;
           color: inherit;
         }
+
+        @media (max-width: 768px) {
+          .contact-subtext {
+            margin: 10px auto 24px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .contact-headline {
+            line-height: 1.2;
+          }
+
+          .contact-subtext {
+            font-size: 12px;
+            line-height: 1.7;
+          }
+        }
       `}</style>
 
       <section id="contact" style={styles.contactSection}>

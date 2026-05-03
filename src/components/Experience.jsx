@@ -195,13 +195,33 @@ export default function Experience() {
         @media (max-width: 768px) {
           .exp-container {
             grid-template-columns: 1fr;
+            gap: 28px;
           }
 
           .exp-col-left {
             border-right: none;
             padding-right: 0;
-            padding-bottom: 24px;
+            padding-bottom: 28px;
             border-bottom: 1px solid var(--rule);
+          }
+
+          .exp-item {
+            margin-bottom: 0;
+          }
+
+          .exp-highlights {
+            gap: 12px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .exp-title {
+            font-size: 18px;
+            line-height: 1.25;
+          }
+
+          .exp-key-contribution {
+            padding: 14px 14px;
           }
         }
       `}</style>

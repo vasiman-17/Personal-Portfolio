@@ -169,6 +169,21 @@ export default function Skills() {
         @media (max-width: 768px) {
           .skills-grid {
             grid-template-columns: 1fr;
+            gap: 18px;
+          }
+
+          .skills-ad {
+            padding: 18px 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .skills-title {
+            font-size: 18px;
+          }
+
+          .skill-item {
+            font-size: 11px;
           }
         }
       `}</style>
